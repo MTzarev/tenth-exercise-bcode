@@ -1,12 +1,18 @@
 import ComponentB from "./ComponentB";
-import { useState } from "react";
+import { useState, createContext } from "react";
+
+export const UserContext = createContext()
+
 function ComponentA () {
     const [user, setUser] = useState("MyCode")
     return (
         <div className="box">
             <h1>ComponentA</h1>
             <h2>{`Hello ${user}`}</h2>
-            <ComponentB user={user}></ComponentB>
+            <UserContext.Provider value={user}>
+                <ComponentB user={user}></ComponentB>
+
+            </UserContext.Provider>
         </div>
     );
 }
