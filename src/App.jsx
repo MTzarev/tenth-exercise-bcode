@@ -1,13 +1,10 @@
-import MyComponent from "./components/MyComponent"
-import ComponentA from "./components/ComponentA"
+import MyComponent from "./components/MyComponent";
 function App() {
  
 
   return (
    <div>
-        <MyComponent></MyComponent>
-        <hr />
-        <ComponentA></ComponentA>
+    <MyComponent/>
    </div>
   )
 }

@@ -6,14 +6,15 @@ export const UserContext = createContext()
 function ComponentA () {
     const [user, setUser] = useState("MyCode")
     return (
+        <UserContext.Provider value={user}>
+        
         <div className="box">
             <h1>ComponentA</h1>
             <h2>{`Hello ${user}`}</h2>
-            <UserContext.Provider value={user}>
                 <ComponentB user={user}></ComponentB>
 
-            </UserContext.Provider>
         </div>
+            </UserContext.Provider>
     );
 }
 export default ComponentA;
